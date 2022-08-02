@@ -1,9 +1,12 @@
 import axios from "axios";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const form = document.querySelector("form")!;
 const addressInput = document.getElementById("address")! as HTMLInputElement;
 const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
-
+console.log(GOOGLE_API_KEY);
 type GoogleGeocodingResponse = {
   results: { geometry: { location: { lat: number; lng: number } } }[];
   status: "OK" | "ZERO_RESULTS";
